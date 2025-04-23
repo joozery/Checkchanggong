@@ -125,7 +125,7 @@ export const ScammerReportSection = () => {
     <section className="bg-white py-10 text-gray-800 font-prompt">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-xl font-semibold text-emerald-700 mb-6">รายการช่างโกงล่าสุด</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {reportedScammers.map((report, index) => (
             <div
               key={index}
