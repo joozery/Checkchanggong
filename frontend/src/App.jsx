@@ -1,14 +1,22 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
-import Footer from './components/Footer'; // 👈 เพิ่ม Footer เข้ามา
+import ReportScammer from './pages/ReportScammer';
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-      <Home />
-      <Footer /> {/* 👈 แสดง Footer ด้านล่างสุดของหน้า */}
-    </>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/report" element={<ReportScammer />} />
+      </Routes>
+
+      <Footer />
+    </Router>
   );
 }
 
