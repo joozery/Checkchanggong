@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import ReportScammer from './pages/ReportScammer';
+import ScammerDetail from "./pages/ScammerDetail";
+import TrustedDetailPage from './pages/TrustedDetailPage';
+
 
 function App() {
   return (
@@ -13,6 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/report" element={<ReportScammer />} />
+        <Route path="/scammer/:ref" element={<ScammerDetail />} />
+        <Route path="/trusted/:id" element={<TrustedDetailPage />} />
       </Routes>
 
       <Footer />

@@ -9,6 +9,7 @@ import {
   ResponsiveContainer
 } from "recharts";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ เพิ่มการ import Link สำหรับลิงก์ดูรายละเอียด
 
 export const SearchStatsSection = () => {
   const dailyStats = [
@@ -136,8 +137,14 @@ export const ScammerReportSection = () => {
               </p>
               <p className="text-sm text-gray-600">บริการ: <span className="text-gray-800 font-medium">{report.service}</span></p>
               <p className="text-sm text-gray-600">แพลตฟอร์ม: <span className="text-gray-800 font-medium">{report.platform}</span></p>
-              <p className="text-sm text-gray-600">วันแจ้ง: {report.date} [<span className="text-blue-600 cursor-pointer hover:underline">{report.ref}</span>]</p>
-              <p className="text-sm text-gray-500 mt-1 cursor-pointer hover:underline">ดูรายละเอียด</p>
+              <p className="text-sm text-gray-600">วันแจ้ง: {report.date} [<span className="text-blue-600">{report.ref}</span>]</p>
+
+              <Link
+                to={`/scammer/${report.ref}`}
+                className="text-sm text-gray-500 mt-1 inline-block hover:underline hover:text-blue-600 transition"
+              >
+                ดูรายละเอียด
+              </Link>
             </div>
           ))}
         </div>
